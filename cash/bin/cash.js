@@ -1,4 +1,5 @@
 /*eslint-disable no-process-exit*/
+
 const got = require('got');
 const money = require('money');
 const chalk = require('chalk');
@@ -7,6 +8,9 @@ const currencies = require('../lib/currencies.json');
 
 const API = 'https://api.fixer.io/latest';
 
+/**
+ * Convert a starting currency in (a) target currency(ies) thanks to the exchange rate(s).
+ */
 const convert = configuration => {
   const {amount, to, from, response, loading} = configuration;
 
@@ -34,6 +38,9 @@ const convert = configuration => {
   process.exit(1);
 };
 
+/**
+ * Convert with the user input
+ */
 const cash = async command => {
   const amount = command.amount;
   const from = command.from.toUpperCase();

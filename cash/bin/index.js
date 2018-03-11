@@ -10,6 +10,11 @@ const argv = process.argv.slice(2);
 
 helpers(argv);
 
+/**
+ * Parse the command line arguments
+ * (the amount, the starting currency and the target currency(ies))
+ * and sends it to the cash.js file.
+ */
 const command = {
   'amount': argv[0] || 1,
   'from': argv[1] || config.get('defaultFrom', 'USD'),
